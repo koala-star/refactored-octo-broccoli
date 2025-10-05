@@ -1,23 +1,38 @@
 @media (max-width: 700px) {
     body {
-        width: 90%;
+        width: 90% !important;
     }
 
     html {
-        background-color: bisque;
+        background-color: rgb(255, 241, 230) !important;
     }
     
     .main-text, .header, h1 {
-        background-color: bisque !important;
+        background-color:  rgb(255, 241, 230) !important;
     }
     .main-text, .top {
         float: none;
-        width: 100%;
-        max-width: 100%;
+        width: 100% !important;
+        max-width: 100% !important;
         display: block;
     }
 
     .main-text {
         width: 100% !important;
+        font-size: clamp(20px, 7vw, 20px);
+    }
+
+    .header {
+        font-size: clamp(20px, 6vw, 30px) !important;
+    }
+
+    h1 {
+        padding: 5% !important;
+        font-size: clamp(20px, 11vw, 40px) !important;
+    }
+
+    .top li, .top h2 {
+        font-size: 2em !important;
+        background-color: rgb(255, 241, 230) !important;
     }
 }
