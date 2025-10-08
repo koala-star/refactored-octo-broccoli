@@ -3,12 +3,20 @@
         width: 90% !important;
     }
 
+    h1 {
+        color: black !important;
+    }
+
     html {
-        background-color: rgb(150, 150, 150) !important;
+        background-color:rgb(180, 207, 207) !important;
+    }
+
+    .top h2 {
+        color:cadetblue;
     }
     
     .main-text, .header, h1 {
-        background-color:  rgb(150, 150, 150) !important;
+        background-color:rgb(180, 207, 207) !important;
     }
     .main-text, .top {
         float: none;
@@ -24,12 +32,13 @@
 
     .header {
         font-size: clamp(20px, 6vw, 30px) !important;
-        color:darkslategrey !important;
+        color:rgb(82, 114, 114) !important;
     }
 
     .advice {
         justify-content: center !important;
         width: 100% !important;
+        clear: none !important;
     }
 
     h1 {
@@ -39,6 +48,16 @@
 
     .top li, .top h2 {
         font-size: 2em !important;
-        background-color: rgb(150, 150, 150) !important;
+        background-color:rgb(180, 207, 207) !important;
     }
+
+    .advice li, .advice h2 {
+        font-size: 2em !important;
+        background-color:rgb(180, 207, 207) !important;
+    }
+
+    .advice h2 {
+        color: cadetblue;
+    }
+
 }
