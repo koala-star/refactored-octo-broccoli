@@ -1,6 +1,6 @@
 @media (max-width: 700px) {
     body {
-        width: 90% !important;
+        width: 100% !important;
     }
 
     h1 {
@@ -54,6 +54,7 @@
     .advice li, .advice h2 {
         font-size: 2em !important;
         background-color:rgb(180, 207, 207) !important;
+        width: 100% !important;
     }
 
     .advice h2 {

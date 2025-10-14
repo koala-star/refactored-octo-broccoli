@@ -1,0 +1,5 @@
+@media (max-width: 700px) {
+    h1 {
+        font-size: clamp(20px, 11vw, 40px) !important;
+    }
+}
