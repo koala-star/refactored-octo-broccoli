@@ -1,6 +1,7 @@
 @media (max-width: 700px) {
     body {
         width: 100% !important;
+        margin: 0 !important;
     }
 
     h1 {
@@ -41,6 +42,11 @@
         clear: none !important;
     }
 
+    .advice h2 {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
     h1 {
         padding: 5% !important;
         font-size: clamp(20px, 11vw, 40px) !important;
@@ -51,7 +57,7 @@
         background-color:rgb(180, 207, 207) !important;
     }
 
-    .advice li, .advice h2 {
+    .advice h2 {
         font-size: 2em !important;
         background-color:rgb(180, 207, 207) !important;
         width: 100% !important;
@@ -59,6 +65,10 @@
 
     .advice h2 {
         color: cadetblue;
+    }
+
+    .advice li {
+        font-size: 1.2em;
     }
 
 }
