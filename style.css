@@ -1,7 +1,8 @@
 @media (max-width: 700px) {
     body {
         width: 100% !important;
-        margin: 0 !important;
+        max-width: 100% !important;
+        margin: 0;
     }
 
     h1 {
@@ -10,10 +11,16 @@
 
     html {
         background-color:rgb(180, 207, 207) !important;
+        max-width: 100% !important;
+        padding-left: clamp(0px, 1vw, 70px);
+        padding-right:clamp(0px, 1vw, 70px);
+    
     }
 
     .top h2 {
         color:cadetblue;
+        background-color:rgb(180, 207, 207) !important;
+        font-size: clamp(16px, 7vw, 80px) !important;
     }
     
     .main-text, .header, h1 {
@@ -41,18 +48,12 @@
         width: 100% !important;
         clear: none !important;
     }
-
-    .advice h2 {
-        padding: 0 !important;
-        margin: 0 !important;
-    }
-
     h1 {
         padding: 5% !important;
         font-size: clamp(20px, 11vw, 40px) !important;
     }
 
-    .top li, .top h2 {
+    .top li {
         font-size: 2em !important;
         background-color:rgb(180, 207, 207) !important;
     }
@@ -60,11 +61,8 @@
     .advice h2 {
         font-size: 2em !important;
         background-color:rgb(180, 207, 207) !important;
-        width: 100% !important;
-    }
-
-    .advice h2 {
         color: cadetblue;
+        margin: 5%;
     }
 
     .advice li {
