@@ -12,8 +12,8 @@
     html {
         background-color:rgb(180, 207, 207) !important;
         max-width: 100% !important;
-        padding-left: clamp(0px, 1vw, 70px);
-        padding-right:clamp(0px, 1vw, 70px);
+        padding-left: clamp(0px, 0.4vw 70px);
+        padding-right:clamp(0px, 0.4vw, 70px);
     
     }
 
@@ -69,4 +69,17 @@
         font-size: 1.2em;
     }
 
+}
+
+
+@media (max-width: 1005px) {
+    .advice li {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 780px) {
+    .advice li {
+        font-size: 1em;
+    }
 }

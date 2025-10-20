@@ -2,8 +2,25 @@
     h1 {
         font-size: clamp(20px, 11vw, 40px) !important;
     }
-    html {
-        width: 100%;
-        max-width: 100%;
+    html, body {
+        width: 100% !important;
+    }
+
+    .List-comparatif {
+        float: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-content: center !important;
+        align-items: center;
+    }
+
+    .title {
+        margin-bottom: 30px !important;
+    }
+
+    hr.separateur {
+        border: none;
+        border-top: 1px solid #ccc;
+        max-width: 60%;
     }
 }
