@@ -66,7 +66,8 @@
     }
 
     .advice li {
-        font-size: 1.2em;
+        font-size: 1.6em !important;
+        flex: 0 0 calc(100% - 100px) !important;
     }
 
 }

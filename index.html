@@ -7,6 +7,8 @@
         <style>
             html{
                 background-color: rgb(180, 207, 207);
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI Semibold', Roboto , Helvetica, Arial, sans-serif !important;
+                font-weight: 500 !important;
             }
             h1 {
                 text-align: center;
@@ -103,22 +105,16 @@
                 padding: 0;
                 margin: 0;
                 box-sizing: border-box;
-                gap: 5px;
+                gap: 10px;
             }
             .advice li {
                 display: flex;
-                align-items: center;
-                flex: 0 0 calc(33.333% - 5px);
+                align-items: left;
+                flex: 0 0 calc(40% - 2px);
                 height: 50px;
                 font-size: clamp(15px, 1.8vw, 24px);
-                border-color: black;
-                border: 1px solid #000000;
+                background-color: rgba(239, 253, 253, 0.625);
                 border-radius: 15px;
-                box-sizing: border-box;
-                word-break: break-word;
-                overflow-wrap: anywhere;
-                white-space: normal;
-                transition: background-color 0.3s ease;
                 margin-bottom: 5px;
             }
             .advice li:hover {
@@ -143,7 +139,9 @@
                 color: inherit;
                 text-decoration: none;
                 width: 100%;
-                justify-content: center;
+                justify-content: left;
+                padding-left: clamp(20px, 3vw, 40px);
+                gap: 10px;
             }
             .advice a {
                 gap: 10px;
