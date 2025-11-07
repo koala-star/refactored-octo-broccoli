@@ -1,9 +1,11 @@
 @media (max-width: 700px) {
+
     h1 {
         font-size: clamp(20px, 11vw, 40px) !important;
     }
+
     html, body {
-        width: 100% !important;
+        overflow-x: hidden !important;   /* ← empêche le décalage */
     }
 
     .List-comparatif {
@@ -11,7 +13,8 @@
         width: 100% !important;
         max-width: 100% !important;
         justify-content: center !important;
-        align-items: center;
+        align-items: center;         /* ← équilibre les côtés */
+        margin-bottom: 100px;
     }
 
     .title {
@@ -21,7 +24,27 @@
     hr.separateur {
         border: none;
         border-top: 1px solid #ccc;
-        max-width: 60%;
     }
-    
+
+    .Avis-Wrapper {
+        float: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        justify-content: center !important;
+        align-items: center;          /* ← équilibre les côtés */
+        text-align: center !important;
+    }
+
+    .Avis-Wrapper p {
+        text-align: justify !important; /* ← avant c'était justify */
+    }
+
+    .text {
+        display: flex;
+        flex-direction: column;       /* ← empile proprement */
+        justify-content: center !important;
+        align-items: center !important;
+        padding: 4%;
+        margin-right: 0;
+    }
 }

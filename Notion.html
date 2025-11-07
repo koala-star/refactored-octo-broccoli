@@ -8,8 +8,12 @@
         <link rel="stylesheet" href="styleN.css">
         <style>
 
+            html body {
+                overflow-x: hidden;
+            }
+
             html {
-                padding-left: clamp(0px, 0.4vw 70px) !important;
+                padding-left: clamp(0px, 0.4vw, 70px) !important;
                 padding-right:clamp(0px, 0.4vw, 70px) !important;
                 font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI Semibold', Roboto , Helvetica, Arial, sans-serif !important;
                 font-weight: 500 !important; 
@@ -37,7 +41,6 @@
             .List-comparatif ul {
                 list-style: none;
                 padding-left: 0;
-                margin: 20px 0;
             }
 
             .List-comparatif li {
@@ -47,8 +50,12 @@
             .List-comparatif {
                 display: flex;
                 flex-direction: column;
-                max-width: 30%;
-                margin-top: 80px;
+                margin-right: auto;
+                max-width: 40%;
+                margin-left: 4%;
+                justify-content: center;
+
+
             }
 
             .List-comparatif h3 {
@@ -56,10 +63,10 @@
             }
 
             hr.separateur {
-                width: 100%;
-                max-width: auto; /* ou auto selon ton design */
+                max-width: 100%; /* ou auto selon ton design */
                 border: none;
                 border-top: 1px solid #ccc;
+                
                 margin: 20px 0;
             }
 
@@ -85,46 +92,36 @@
                 overflow-y: hidden;
                 width: 100%;
                 padding: 20px;
+                display: inline-block;
             }
             
             .gallery {
-                display: flex;
                 gap: 20px;
                 width: max-content;
+                display: flex;
             }
             
             .gallery img {
-                height: 300px;
                 border-radius: 10px;
                 object-fit: cover;
                 flex-shrink: 0;
+                height: 300px;
             }
             
             .gallery-wrapper {
                 position: relative;
                 width: 100%;
-                height: 300px;
                 overflow: hidden;
-            }    
-            .gallery-container {
+                display: inline-block;
                 overflow-x: auto;
                 scroll-behavior: smooth;
                 -webkit-overflow-scrolling: touch;
                 padding: 0 20px;
-                height: 100%;
-            }
-            .gallery {
-                display: flex;
-                gap: 20px;
-                height: 100%;
-                width: max-content;
-            }
-            
-            .gallery img {
-                height: 300px;
-                border-radius: 10px;
-                object-fit: cover;
-                flex-shrink: 0;
+                scrollbar-width: none;
+                -ms-overflow-style: none;
+            } 
+            .gallery-container ::-webkit-scrollbar {
+                display: none;
             }
             
             .nav {
@@ -160,10 +157,10 @@
             }
             
             #lightbox img {
-                max-width: 90vw;
-                max-height: 80vh;
-                border-radius: 10px;
+                width: 87%;
+                border-radius: 30px;
                 box-shadow: 0 0 20px black;
+                image-resolution: 800px;
             }
             
             #closeLightbox {
@@ -189,29 +186,46 @@
                 cursor: pointer;
                 border-radius: 50%;
                 user-select: none;
-        }
-        
-        .lightbox-nav.left {
+            }
+            
+            .lightbox-nav.left {
             left: 20px;
-        }
+            }
         
-        .lightbox-nav.right {
+            .lightbox-nav.right {
             right: 20px;
-        }
+            }
 
-        .getNotion {
-            margin-bottom: 50px;
-            margin-left: clamp(0px, 0.4vw 70px) !important;
-            margin-right:clamp(0px, 0.4vw, 70px) !important;
-        }
+            .getNotion a{
+                color: inherit;
+                text-decoration: none;
+                cursor: pointer;
+                color: white;
+                background-color:coral;
+                padding: 4px;
+                border-radius: 5px;
+                margin-left: 5%;
 
-        .getNotion a{
-            text-decoration: none !important;
-            color: inherit;
-            padding: 1% 3%;
-            background-color:rgb(109, 109, 109);
-            border-radius: 5px;
-        }
+            }
+
+            .Avis-Wrapper {
+                display: flex ;
+                flex-direction: column;
+                margin-right: 4%;
+                text-align: center;
+                max-width: 40%;
+            }
+
+            .Avis-Wrapper p {
+                text-align: justify;
+                color:dimgrey;
+            }
+
+            .text {
+                display: flex;
+                justify-content: flex-end;
+                flex-wrap: wrap;
+            }
         
         </style>
     </head>
@@ -222,18 +236,17 @@
             <h1>Notion</h1>
         </div>
         <div class="getNotion">
-            <a href="">
-                Install Notion
-            </a>
+            <a href="https://www.notion.com/desktop">Télécharger Notion</a>
+
         </div>
         <div class="gallery-wrapper">
             <button class="nav left">‹</button>
             <div class="gallery-container">
                 <div class="gallery">
-                    <img src="image1.png" alt="App image 1">
-                    <img src="image2.png" alt="App image 2">
-                    <img src="image3.png" alt="App image 3">
-                    <!-- Ajoute autant d'images que tu veux -->
+                    <img class="imageSearch" src="images/desktop/image1.png" alt="App image 1">
+                    <img class="imageSearch" src="images/desktop/image2.png" alt="App image 2">
+                    <img class="imageSearch" src="images/desktop/image3.png" alt="App image 3">
+                    <img class="imageSearch" src="images/desktop/image4.png" alt="App image 4">
                 </div>
             </div>
             <button class="nav right">›</button>
@@ -255,76 +268,113 @@
             });
             });
         </script>
-            <div id="lightbox" style="display:none;">
-                <button id="closeLightbox">×</button>
-                <button id="prevImage" class="nav lightbox-nav left">‹</button>
-                <img id="lightboxImage" src="" alt="Large view" />
-                <button id="nextImage" class="nav lightbox-nav right">›</button>
-            </div>
-            <script>
-                const images = document.querySelectorAll('.gallery img');
-                const lightbox = document.getElementById('lightbox');
-                const lightboxImage = document.getElementById('lightboxImage');
-                const closeLightboxBtn = document.getElementById('closeLightbox');
-                const prevBtn = document.getElementById('prevImage');
-                const nextBtn = document.getElementById('nextImage');
-                
-                let currentIndex = 0;
-                
-                function openLightbox(index) {
-                    currentIndex = index;
-                    lightboxImage.src = images[currentIndex].src;
-                    lightbox.style.display = 'flex';
-                }
+        <div id="lightbox" style="display:none;">
+            <button id="closeLightbox">×</button>
+            <button id="prevImage" class="nav lightbox-nav left">‹</button>
+            <img id="lightboxImage" src="" alt="Large view" />
+            <button id="nextImage" class="nav lightbox-nav right">›</button>
+        </div>
+        <script>
+        const images = document.querySelectorAll('.gallery img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightboxImage');
+        const closeLightboxBtn = document.getElementById('closeLightbox');
+        const prevBtn = document.getElementById('prevImage');
+        const nextBtn = document.getElementById('nextImage');
+        
+        let currentIndex = 0;
+        
+        function openLightbox(index) {
+            currentIndex = index;
+            lightboxImage.src = images[currentIndex].src;
+            lightbox.style.display = 'flex';
+        }
 
-                function closeLightbox() {
-                    lightbox.style.display = 'none';
+        function closeLightbox() {
+            lightbox.style.display = 'none';
+        }
+        
+        function showPrevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            lightboxImage.src = images[currentIndex].src;
+        }
+                
+        function showNextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            lightboxImage.src = images[currentIndex].src;
+        }
+        
+        images.forEach((img, index) => {
+            img.style.cursor = 'pointer';
+            img.addEventListener('click', () => openLightbox(index));
+        });
+        
+        closeLightboxBtn.addEventListener('click', closeLightbox);
+        
+        prevBtn.addEventListener('click', showPrevImage);
+        nextBtn.addEventListener('click', showNextImage);
+        
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                closeLightbox();
+            }
+        });
+        </script>
+        <script>
+        function updateGalleryImages() {
+            const images = document.querySelectorAll(".imageSearch");
+            const userAgent = navigator.userAgent;
+
+            const isMobile = /Mobi|Android|iPhone|Ipod/i.test(userAgent);
+            const isTablet = /iPad|Tablet|Nexus 7|Nexus 10|SM-T/i.test(userAgent);
+            const isDesktop = ! isMobile && ! isTablet;
+
+            let folder = "desktop";
+            if (isMobile) folder = "mobile";
+            else if(isTablet) folder = "tablet"
+            else if (isDesktop) folder ="desktop"
+            
+            images.forEach((img, index) => {
+                img.src = `images/${folder}/image${index + 1}.png`;
+            });
+            
+            if (isMobile) {
+                images.forEach(img => {
+                    leftBtn.style.display = 'none';
+                    rightBtn.style.display = 'none';
+                    img.style.height = "clamp(100px, 190vw, 500px)";
+                    img.style.borderRadius = "10px";
+                    img.style.margin = "5px";
+
                 }
-                
-                function showPrevImage() {
-                    currentIndex = (currentIndex - 1 + images.length) % images.length;
-                    lightboxImage.src = images[currentIndex].src;
-                }
-                
-                function showNextImage() {
-                    currentIndex = (currentIndex + 1) % images.length;
-                    lightboxImage.src = images[currentIndex].src;
-                }
-                
-                // Ouvre lightbox au clic sur une image
-                images.forEach((img, index) => {
-                    img.style.cursor = 'pointer';
-                    img.addEventListener('click', () => openLightbox(index));
-                });
-                
-                // Ferme lightbox au clic sur bouton close
-                closeLightboxBtn.addEventListener('click', closeLightbox);
-                
-                // Navigation flèches lightbox
-                prevBtn.addEventListener('click', showPrevImage);
-                nextBtn.addEventListener('click', showNextImage);
-                
-                // Fermer lightbox si clic en dehors de l’image
-                lightbox.addEventListener('click', (e) => {
-                    if (e.target === lightbox) {
-                        closeLightbox();
-                    }
-                });
-            </script>
+            )};
+
+        }
+        updateGalleryImages();
+        </script>
+        <div class="text">
             <div class="List-comparatif">
-            <h3>Comparatif</h3>
-            <h4 style="color: green;">Point+ </h4>
-            <ul class="Positif">
-                <li>Application très complète</li>
-                <li>Template majoritairement gratuit</li>
-            </ul>
-            <hr class="separateur">
-            <h4 style="color: red;">Point - </h4>
-            <ul class="Negatif">
-                <li>Peut être complex au début</li>
-                <li>Ralenti avec beaucou de donnés</li>
-                <li>N'envoie pas de notification</li>
-            </ul>
+                <h3>
+                    <u>Comparatif</u>
+                </h3>
+                <h4 style="color: green;">Point+ </h4>
+                <ul class="Positif">
+                    <li>Application très complète</li>
+                    <li>Template majoritairement gratuit</li>
+                </ul>
+                <hr class="separateur">
+                <h4 style="color: red;">Point - </h4>
+                <ul class="Negatif">
+                    <li>Peut être complex au début</li>
+                    <li>Ralenti avec beaucou de donnés</li>
+                </ul>
+            </div>
+            <div class="Avis-Wrapper">
+                <h3 style="color:darkslategray;"><u>Mon Avis</u></h3>
+                <p>
+                    Après une utilisation de Notion pendant plus d'un mois je trouve cette application vraiment bien. Elle est "multiplateforme"(disponible sur Android, IOS, ect...),mais bien plus agrèable à utiliser sur ordinateur. On peut crée de nouveaux template ou en utiliser déjàt crée par d'autre personnes. Le fais que l'on puisse exploiter tous son potentiel sans payer est vraiment excellent ! Par contre le petit poin négatif c'est que sur mobile l'applicationest asser difficile a utiliser; il y'a trop d'information dans un même espace on ne sait pas ou en donné de la tête.  
+                </p>
+            </div>
         </div>
     </body>
 </html>
