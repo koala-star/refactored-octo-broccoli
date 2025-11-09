@@ -8,15 +8,19 @@
         <link rel="stylesheet" href="styleN.css">
         <style>
 
-            html body {
-                overflow-x: hidden;
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                padding-left: clamp(0px, 0.4vw, 70px);
+                padding-right: clamp(0px, 0.4vw, 70px);
+                margin: 0;
             }
 
             html {
-                padding-left: clamp(0px, 0.4vw, 70px) !important;
-                padding-right:clamp(0px, 0.4vw, 70px) !important;
-                font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI Semibold', Roboto , Helvetica, Arial, sans-serif !important;
-                font-weight: 500 !important; 
+                font-family: Helvetica;
+                font-weight: bold;
             }
             .title {
                 display: flex;
@@ -24,7 +28,7 @@
                 align-items: center;
                 gap: 10px;
                 margin-top: 100px;
-                transform: translateX(-5%);
+                transform: translateX(-3%);
                 margin-bottom: 30px;
             }
             .title img {
@@ -50,12 +54,11 @@
             .List-comparatif {
                 display: flex;
                 flex-direction: column;
-                margin-right: auto;
-                max-width: 40%;
+                margin: 0 auto; /* enlève le margin-left auto */
+                max-width:fit-content;
                 margin-left: 4%;
                 justify-content: center;
-
-
+                text-align:start;
             }
 
             .List-comparatif h3 {
@@ -66,7 +69,6 @@
                 max-width: 100%; /* ou auto selon ton design */
                 border: none;
                 border-top: 1px solid #ccc;
-                
                 margin: 20px 0;
             }
 
@@ -91,6 +93,7 @@
                 overflow-x: auto;
                 overflow-y: hidden;
                 width: 100%;
+                max-width: 100%;
                 padding: 20px;
                 display: inline-block;
             }
@@ -111,9 +114,10 @@
             .gallery-wrapper {
                 position: relative;
                 width: 100%;
+                max-width: 100%;
                 overflow: hidden;
                 display: inline-block;
-                overflow-x: auto;
+                overflow-x:hidden;
                 scroll-behavior: smooth;
                 -webkit-overflow-scrolling: touch;
                 padding: 0 20px;
@@ -204,7 +208,7 @@
                 background-color:coral;
                 padding: 4px;
                 border-radius: 5px;
-                margin-left: 5%;
+                margin: 5%;
 
             }
 
@@ -213,7 +217,6 @@
                 flex-direction: column;
                 margin-right: 4%;
                 text-align: center;
-                max-width: 40%;
             }
 
             .Avis-Wrapper p {
@@ -225,12 +228,97 @@
                 display: flex;
                 justify-content: flex-end;
                 flex-wrap: wrap;
+                text-align: justify;
+                color:dimgrey;
+                align-items: flex-start;
+                margin:50px;
+                width: 90%;
+                font-size: clamp(3px, 3vw, 20px)
+
             }
+
+            .text h3 {
+                justify-content: center;
+                color: black;
+            }
+
+            .speciale {
+                text-align: justify;
+            }
+
+            .back a {
+                display: inline-block;
+                color: inherit;
+                text-decoration: none;
+                cursor: pointer;
+                color: white;
+                background-color:coral;
+                padding: 4px;
+                margin: 1% 0 0 1%;
+                border-radius: 5px ;
+                cursor: pointer;
+
+            }
+            .back a:hover {
+                background-color: #f2f2f2;
+            }
+            .getNotion a:hover {
+                background-color: #f2f2f2;
+            }
+
+            .contact {
+                min-width: 100%;
+                width: 100vw;
+                width: calc(100% + clamp(0px, 0.4vw, 70px) * 2);
+                margin-left: calc(-1 * clamp(0px, 0.4vw, 70px));
+                margin-top: clamp(7px, 10vw, 50px);
+                display: flex;
+                justify-content: space-between;
+                background-color:lightgray;
+                padding-top: clamp(5px, 10vw, 30px);
+                margin-top: 10%;
+                height:fit-content;
+                padding-bottom: clamp(5px, 10vw, 30px);
+                font-size: clamp(3px, 3vw, 15px);
+                font-weight: normal;
+                gap: 20px;
+                flex-wrap: nowrap;
+            }
+
+            .adresse {
+                margin-right: auto;
+                margin-left: clamp(5px, 12vw, 400px);
+            }
+
+            .adresse h4 {
+                text-align: center;
+            }
+
+            .moi {
+                max-width: 300px;
+                margin-right: clamp(5px, 12vw, 400px);
+            }
+
+            .moi h4 {
+                text-align: center;
+            }
+            .empilement {
+                flex: 1 1 35%; /* pour qu’il prenne environ la moitié de la largeur */
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start; /* ou center selon ton style */
+                max-width: 50%;
+            }
+
+            
         
         </style>
     </head>
 
     <body>
+        <div class="back Mask">
+           <a href="index.html">back</a>
+        </div>
         <div class="title">
             <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3e%3ctitle%3eNotion%3c/title%3e%3cpath fill='%233F3E42' d='M4.459 4.208c.746.606 1.026.56 2.428.466l13.215-.793c.28 0 .047-.28-.046-.326L17.86 1.968c-.42-.326-.981-.7-2.055-.607L3.01 2.295c-.466.046-.56.28-.374.466zm.793 3.08v13.904c0 .747.373 1.027 1.214.98l14.523-.84c.841-.046.935-.56.935-1.167V6.354c0-.606-.233-.933-.748-.887l-15.177.887c-.56.047-.747.327-.747.933zm14.337.745c.093.42 0 .84-.42.888l-.7.14v10.264c-.608.327-1.168.514-1.635.514-.748 0-.935-.234-1.495-.933l-4.577-7.186v6.952L12.21 19s0 .84-1.168.84l-3.222.186c-.093-.186 0-.653.327-.746l.84-.233V9.854L7.822 9.76c-.094-.42.14-1.026.793-1.073l3.456-.233 4.764 7.279v-6.44l-1.215-.139c-.093-.514.28-.887.747-.933zM1.936 1.035l13.31-.98c1.634-.14 2.055-.047 3.082.7l4.249 2.986c.7.513.934.653.934 1.213v16.378c0 1.026-.373 1.634-1.68 1.726l-15.458.934c-.98.047-1.448-.093-1.962-.747l-3.129-4.06c-.56-.747-.793-1.306-.793-1.96V2.667c0-.839.374-1.54 1.447-1.632'/%3e%3c/svg%3e">
             <h1>Notion</h1>
@@ -366,14 +454,35 @@
                 <h4 style="color: red;">Point - </h4>
                 <ul class="Negatif">
                     <li>Peut être complex au début</li>
-                    <li>Ralenti avec beaucou de donnés</li>
+                    <li>Ralenti avec beaucoup de donnés</li>
                 </ul>
             </div>
-            <div class="Avis-Wrapper">
-                <h3 style="color:darkslategray;"><u>Mon Avis</u></h3>
-                <p>
-                    Après une utilisation de Notion pendant plus d'un mois je trouve cette application vraiment bien. Elle est "multiplateforme"(disponible sur Android, IOS, ect...),mais bien plus agrèable à utiliser sur ordinateur. On peut crée de nouveaux template ou en utiliser déjàt crée par d'autre personnes. Le fais que l'on puisse exploiter tous son potentiel sans payer est vraiment excellent ! Par contre le petit poin négatif c'est que sur mobile l'applicationest asser difficile a utiliser; il y'a trop d'information dans un même espace on ne sait pas ou en donné de la tête.  
-                </p>
+            <div class="empilement">
+                <div class="Avis-Wrapper">
+                    <h3 style="color:darkslategray;"><u>Mon Avis</u></h3>
+                    <p>
+                        Après une utilisation de Notion pendant plus d'un mois je trouve cette application vraiment bien. Elle est "multiplateforme"(disponible sur Android, IOS, ect...),mais bien plus agrèable à utiliser sur ordinateur. On peut crée de nouveaux template ou en utiliser déjàt crée par d'autre personnes. Le fais que l'on puisse exploiter tous son potentiel sans payer est vraiment excellent ! Par contre le petit poin négatif c'est que sur mobile l'applicationest asser difficile a utiliser; il y'a trop d'information dans un même espace on ne sait pas ou en donné de la tête.  
+                    </p>
+                </div>
+                <div class="speciale">
+                    <h3>
+                        <u>Cette app est faite pour vous si:</u>
+                    </h3>
+                    <ul>
+                        <li>Vous voulez vous organiser,</li>
+                        <li>Crée vous même des template selon vos besoins,</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="contact">
+            <div class="adresse">
+                <h4><u>Me joindre</u></h4>
+                <i>anonymous@outlook.com</i>
+            </div>
+            <div class="moi">
+                <h4><u>Moi</u></h3>
+                Je suis nouveaux en informatique c'est mon tout premier site web. Donc si vous auriez des problèmes ou récomanditions, je serai ravis de vous répondre !
             </div>
         </div>
     </body>

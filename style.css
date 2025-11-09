@@ -18,9 +18,16 @@
     }
 
     .top h2 {
-        color:cadetblue;
+        font-size: 2em !important;
         background-color:rgb(180, 207, 207) !important;
-        font-size: clamp(16px, 7vw, 80px) !important;
+        color: cadetblue;
+        margin: 5%;
+    }
+    
+    .top {
+        justify-content: center !important;
+        width: 100% !important;
+        clear: none !important;
     }
     
     .main-text, .header, h1 {

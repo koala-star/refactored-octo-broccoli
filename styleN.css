@@ -6,6 +6,8 @@
 
     html, body {
         overflow-x: hidden !important;   /* ← empêche le décalage */
+        width: 100%;
+        max-width: 100%;
     }
 
     .List-comparatif {
@@ -47,4 +49,46 @@
         padding: 4%;
         margin-right: 0;
     }
+
+    .text, .Avis-Wrapper, .List-comparatif {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .adresse, .moi {
+        width: 100%;
+        max-width: 100px;
+    }
+
+    .contact {
+        padding: 0 !important;
+    }
+
+    .gallery-container {
+        height: fit-content;
+    }
+
+    .text {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 5%;
+}
+
+.List-comparatif,
+.Avis-Wrapper,
+.empilement {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.contact {
+    width: 100% !important;
+    margin-left: 0 !important;
+}
+
+.adresse, .moi {
+    width: 100%;
+    max-width: 100%;
+}
+
 }
