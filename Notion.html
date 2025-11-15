@@ -69,9 +69,6 @@
       /* ========== GALERIE ========== */
       .gallery-wrapper {
         position: relative;
-        width: 100%;
-        max-width: 100%;
-        overflow: hidden;
         display: block;
         scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
@@ -83,8 +80,6 @@
       .gallery-container {
         overflow-x: auto;
         overflow-y: hidden;
-        width: 100%;
-        max-width: 100%;
         padding: 0;
         display: block;
       }
@@ -96,8 +91,6 @@
       .gallery {
         display: flex;
         gap: 20px;
-        width: 100%;
-        max-width: 100%;
         box-sizing: border-box;
       }
 
@@ -302,12 +295,12 @@
         background-color: lightgray;
         margin: 10% 0 0 0;
         padding-top: clamp(5px, 10vw, 30px);
-        padding-bottom: clamp(5px, 10vw, 30px);
+        padding-bottom: calc(clamp(5px, 10vw, 30px) + env(safe-area-inset-bottom));
         background-size: auto;
         font-size: clamp(3px, 3vw, 15px);
         font-weight: normal;
         gap: 20px;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         text-align: justify;
       }
 
@@ -332,14 +325,10 @@
         display: flex;
         flex-wrap: nowrap;
         gap: 20px;
-        width: max-content; /* la galerie fait la taille de ses images */
-        box-sizing: border-box;
       }
 
       .gallery-container {
         overflow-x: auto;
-        width: 100%;
-        box-sizing: border-box;
       }
 
 /* ✅ Corrige le duo .text / .empilement */
@@ -362,7 +351,6 @@
       .contact {
         flex-wrap: wrap; /* autorise le retour à la ligne */
         box-sizing: border-box;
-        flex: 1 !important;
       }
 
     </style>
