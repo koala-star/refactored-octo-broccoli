@@ -357,6 +357,34 @@
         flex-wrap: wrap; /* autorise le retour à la ligne */
         box-sizing: border-box;
       }
+      /* footer */
+      .contact {
+        position: relative;          /* pour le pseudo-élément si tu veux */
+        margin: 0;
+        padding: 20px;               /* espace normal pour le texte */
+        background: lightgray;       /* la couleur du footer */
+        box-sizing: border-box;
+      }
+
+/* pseudo-élément qui prolonge le background sous la barre iOS */
+      .contact::after {
+        content: "";
+        position: fixed;             /* reste au bas de l'écran, même si on scroll */
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: env(safe-area-inset-bottom, 20px); /* fallback 20px si env() pas dispo */
+        background: inherit;         /* reprend la même couleur que .contact */
+        pointer-events: none;        /* ne gêne pas les clics */
+        z-index: 0;                  /* derrière le contenu */
+      }
+
+/* s'assurer que le contenu du footer est au-dessus du pseudo-élément */
+        .contact > * {
+          position: relative;
+          z-index: 1;
+        }
+
 
     </style>
   </head>
