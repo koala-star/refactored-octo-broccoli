@@ -16,12 +16,9 @@
         max-width: 100%;
         font-family: Helvetica;
         font-weight: bold;
+        box-sizing: border-box;
       }
 
-      body {
-        padding-left: clamp(0px, 0.4vw, 70px);
-        padding-right: clamp(0px, 0.4vw, 70px);
-      }
 
       /* ========== TITRE ========== */
       .title {
@@ -99,7 +96,9 @@
       .gallery {
         display: flex;
         gap: 20px;
-        width: max-content;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
       }
 
       .gallery img {
@@ -192,7 +191,7 @@
         flex-direction: column;
         margin: 0 auto;
         max-width: fit-content;
-        margin-left: 4%;
+        padding-left: 20px;
         justify-content: center;
         text-align: start;
         font-size: clamp(3px, 5vw, 20px);
@@ -249,6 +248,7 @@
         gap: 30px;
         text-align: justify;
         color: dimgrey;
+        box-sizing: border-box;
       }
 
       .text h3 {
@@ -256,7 +256,6 @@
         text-align: center;
       }
 
-      .List-comparatif,
       .empilement {
         margin: 0 auto !important;
         padding: 0 !important;
@@ -267,7 +266,6 @@
       .Avis-Wrapper {
         display: flex;
         flex-direction: column;
-        padding: 10px;
         text-align: left;
         font-size: clamp(3px, 5vw, 20px);
       }
@@ -275,24 +273,24 @@
       .Avis-Wrapper p {
         text-align: justify;
         color: dimgrey;
-        margin: 10px;
       }
 
       .empilement {
-        flex: 1 1 35%;
+        flex: 1 1 400px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         max-width: 50%;
+        box-sizing: border-box;
+        padding: 20px !important;
       }
 
       .speciale {
-        text-align: justify;
         background-color: rgba(112, 128, 144, 0.429);
         border-radius: 40px;
         padding: 10px;
-        margin: 10px 10px 0 10px;
         font-size: clamp(3px, 5vw, 20px) !important;
+        margin: 0 auto;
       }
 
       /* ========== CONTACT ========== */
@@ -314,7 +312,7 @@
       }
 
       .adresse {
-        margin:5px;
+        margin: 0 auto;
         
 
       }
@@ -326,8 +324,47 @@
 
       .moi {
         max-width: 300px;
-        margin: 5px;
+        margin: 0 auto ;
       }
+
+      /* ✅ Corrige la galerie qui déborde */
+      .gallery {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 20px;
+        width: max-content; /* la galerie fait la taille de ses images */
+        box-sizing: border-box;
+      }
+
+      .gallery-container {
+        overflow-x: auto;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+/* ✅ Corrige le duo .text / .empilement */
+      .text {
+        display: flex;
+        flex-wrap: wrap; /* permet le retour à la ligne */
+        justify-content: center;
+        align-items: flex-start;
+        gap: 30px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+
+      .empilement { /* prend 400px mais peut se réduire */
+        max-width: 100%; /* ne dépasse jamais */
+        box-sizing: border-box;
+      }
+
+/* ✅ Corrige le bas de page */
+      .contact {
+        flex-wrap: wrap; /* autorise le retour à la ligne */
+        box-sizing: border-box;
+        flex: 1 !important;
+      }
+
     </style>
   </head>
 
