@@ -39,7 +39,6 @@
         padding-left: 0 !important;
         margin-left: auto !important;
         margin-right: auto !important;
-        text-align: center !important; /* si tu veux centrer le texte */
     }
 
 
@@ -81,8 +80,6 @@
     /* Galerie */
     .gallery-wrapper, 
     .gallery-container {
-        max-width: 100% !important;
-        overflow-x: hidden !important;
         display: block !important;
     }
     .text {
@@ -94,7 +91,6 @@
     .empilement {
         width: 100% !important;
         max-width: 100%;
-        text-align: left;
     }
 
     .adresse {
